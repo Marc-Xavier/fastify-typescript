@@ -18,7 +18,7 @@ function start() {
     return __awaiter(this, void 0, void 0, function* () {
         const app = yield (0, app_1.buildApp)();
         yield app.register(cors_1.default, {
-            origin: ['http://localhost:3000'],
+            origin: ['http://localhost:3000', 'https://grading-demo-app.netlify.app'],
             methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
         });
         yield app.listen({ port: 4000 });

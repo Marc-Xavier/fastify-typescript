@@ -7,7 +7,7 @@ async function start() {
   const app = await buildApp();
 
   await app.register(cors, {
-    origin: ['http://localhost:3000'],
+    origin: ['http://localhost:3000', 'https://grading-demo-app.netlify.app'],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   });
 
