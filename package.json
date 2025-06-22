@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "start": "tsc && node _compiled/server.js",
-    "dev": "concurrently \"tsc --watch\" \"nodemon _compiled/server.js\"",
+    "start": "tsc && node _dist/server.js",
+    "dev": "concurrently \"tsc --watch\" \"nodemon _dist/server.js\"",
     "typeorm": "ts-node ./node_modules/typeorm/cli.js",
     "migration:generate": "ts-node ./node_modules/typeorm/cli.js migration:generate -d ./data-source.ts",
     "migration:run": "ts-node ./node_modules/typeorm/cli.js migration:run -d ./data-source.ts",
