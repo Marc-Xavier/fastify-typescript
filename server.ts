@@ -11,8 +11,11 @@ async function start() {
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   });
 
-  await app.listen({ port: 4000 });
-  console.log(' Server listening on http://localhost:4000');
+  const port = Number(process.env.PORT) || 4000;
+
+  await app.listen({ port, host: '0.0.0.0' }); // 👈 Required for Render
+  console.log(`🚀 Server listening on http://localhost:4000`);
 }
+
 
 start();
