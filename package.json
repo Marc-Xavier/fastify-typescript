@@ -1,15 +1,21 @@
 {
   "name": "fastify-typescript",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "tsc && node _compiled/server.js",
+    "dev": "concurrently \"tsc --watch\" \"nodemon _compiled/server.js\"",
+    "typeorm": "ts-node ./node_modules/typeorm/cli.js",
+    "migration:generate": "ts-node ./node_modules/typeorm/cli.js migration:generate -d ./data-source.ts",
+    "migration:run": "ts-node ./node_modules/typeorm/cli.js migration:run -d ./data-source.ts",
+    "migration:revert": "ts-node ./node_modules/typeorm/cli.js migration:revert -d ./data-source.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@fastify/cors": "^11.0.1",
     "better-sqlite3": "^12.0.0",
     "fastify": "^5.4.0",
     "fastify-plugin": "^5.0.1"
@@ -17,6 +23,7 @@
   "devDependencies": {
     "@types/better-sqlite3": "^7.6.13",
     "@types/node": "^24.0.3",
+    "concurrently": "^9.1.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
   }
