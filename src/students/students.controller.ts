@@ -13,7 +13,7 @@ export async function studentRoutes(app: FastifyInstance) {
     }
   });
 
-
+  
  app.get('/students', async (request, reply) => {
     try {
       const students = service.getAll();
